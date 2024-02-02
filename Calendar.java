@@ -1,6 +1,3 @@
-/** 
- * Prints the calendars of all the years in the 20th century.
- */
 public class Calendar1 {	
     
 	static int dayOfMonth = 1;   
@@ -32,26 +29,30 @@ public class Calendar1 {
 	}
 	
 
-	 private static void advance() {
-		dayOfMonth ++;
-		dayOfWeek ++;
+	private static void advance() {
+
+	dayOfWeek++;
+	dayOfMonth++;
+
+    if (dayOfWeek > 7) {
+        dayOfWeek = 1;
+     }   
+
+        if (dayOfMonth > nDaysInMonth) {
+            dayOfMonth = 1;
+            month++;
+			
+
+            if (month > 12) {
+                month = 1;
+                year++;
+
+             } 
 		
-		if (dayOfWeek > 7){
-			dayOfWeek = 1;
-
-			if (dayOfMonth > nDaysInMonth){
-				dayOfMonth = 1;
-				month ++;
-
-				if (month > 12){
-					month = 1;
-					year ++;
-
-					nDaysInMonth = nDaysInMonth(month, year);
-				}
-			}
-		}
-	 } 
+		nDaysInMonth = nDaysInMonth(month, year);  
+            
+        }
+}
 		 
     // Returns true if the given year is a leap year, false otherwise.
 	private static boolean isLeapYear(int year) {
