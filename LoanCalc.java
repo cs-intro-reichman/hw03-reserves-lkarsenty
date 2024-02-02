@@ -1,7 +1,7 @@
 public class LoanCalc {
 	
 	static double epsilon = 0.001;  // The computation tolerance (estimation error)
-	static int iterationCounter;    // Monitors the efficiency of the calculation
+	static int iterationCounter = 1;    // Monitors the efficiency of the calculation
 	
 
 	public static void main(String[] args) {		
