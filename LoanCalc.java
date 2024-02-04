@@ -30,8 +30,8 @@ public class LoanCalc {
     	double payment = loan / n + epsilon ;
 		iterationCounter = 0;
 		while (endBalance(loan, rate , n , payment) > 0) {
-			iterationCounter ++;
 			payment = payment + 0.01;
+			iterationCounter ++;			
 		}
 
     	return payment;
@@ -46,7 +46,6 @@ public class LoanCalc {
 		double payment = (l + h)/2;
 
       	while (h - l > epsilon) {
-
 	 iterationCounter ++;
          if (endBalance(loan, rate, n, payment) * endBalance(loan, rate, n, l) > 0)
             l = payment;
