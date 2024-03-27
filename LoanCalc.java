@@ -42,7 +42,7 @@ public class LoanCalc {
     	iterationCounter = 0;
 
 		double l = loan / n;
-		double h = loan * 1.5;
+		double h = loan;
 		double payment = (l + h)/2;
 
       	while (h - l > epsilon) {
