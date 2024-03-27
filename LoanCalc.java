@@ -48,13 +48,13 @@ public class LoanCalc {
       	while (h - l > epsilon) {
 	 
          if (endBalance(loan, rate, n, payment) * endBalance(loan, rate, n, l) > 0) {
-            l = payment;
-	    iterationCounter ++;	 
+            l = payment;	 
 	 } else {
             h = payment;
-         payment = (l + h) / 2;
-         iterationCounter ++;
-      	}
+        }
+        payment = (l + h) / 2; // Update payment for the next iteration
+        iterationCounter++;
+    }
 
     	return payment;
     }
